@@ -1,11 +1,11 @@
 import "./App.css";
-import IconComponent from "./components/IconComponent";
+import Component from "./components/Component";
 
 function App() {
   return (
     <div className="App">
     
-        <IconComponent />
+        <Component />
     
     </div>
   );
