@@ -1,14 +1,20 @@
-import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css"; // optional
+
+import React, { useRef } from 'react'
+import IdleTimer from 'react-idle-timer'
+
+
+const onIdle1=()=>{
+  console.log('koko');
+}
 
 const Component = () => {
+  const ref1=useRef(null)
   return (
     <div>
-      <Tippy content="Hello I am tooltip">
-        <button>My button</button>
-      </Tippy>
+           <IdleTimer  ref={ref1} timeout={2000}  onIdle={onIdle1} ></IdleTimer>
+      
     </div>
-  );
-};
+  )
+}
 
-export default Component;
+export default Component
