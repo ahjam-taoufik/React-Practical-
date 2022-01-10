@@ -1,20 +1,28 @@
-
-import React, { useRef } from 'react'
-import IdleTimer from 'react-idle-timer'
-
-
-const onIdle1=()=>{
-  console.log('koko');
-}
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Component = () => {
-  const ref1=useRef(null)
+  const [startDate, setStartDate] = useState(new Date());
   return (
     <div>
-           <IdleTimer  ref={ref1} timeout={2000}  onIdle={onIdle1} ></IdleTimer>
-      
-    </div>
-  )
-}
+      <DatePicker
+        selected={startDate}
+        onChange={(date) => setStartDate(date)}
+        //showTimeSelect
+          dateFormat='dd/MM/yyyy'
+          isClearable
+         //minDate={new Date}
+          // maxDate={new Date}
+          //filterDate={date =>date.getDate()!=6}
+          //filterDate={date =>date.getDay()!=6 && date.getDay()!=0}  
+          showYearDropdown
+          scrollableYearDropdown
+          // showYearPicker
 
-export default Component
+      />
+    </div>
+  );
+};
+
+export default Component;
